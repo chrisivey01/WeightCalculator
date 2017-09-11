@@ -1,0 +1,81 @@
+#myTitle {
+	position: absolute;
+	color: purple;
+	left: 40%;
+	font-size: 30px;
+	font-style: bold;
+}
+
+.weightOnBarbellBox{
+	position: absolute;
+	top: 15%;
+	left: 10%;
+	width: 250px;
+	height: 250px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+#targetWeightLabel{
+	position: absolute;
+	bottom: 12%;
+	font-style: bold;
+	color: purple;
+}
+
+#targetWeightText{
+	position:absolute;
+	bottom: 5%;
+}
+
+#calculateTargetWeightButton{
+	position: absolute;
+	bottom: 5%;
+	left: 60%;
+	width: 35%;
+}
+
+.lbPlates{
+	position: relative;
+	color:purple;
+	font-size: 20px;
+}
+
+#barbell{
+	position:relative;
+	width: 400px;
+	height: 10px;
+	top: 200px;
+	left: 45%;
+	background-color: #9e9e9e;
+}
+
+/* .plate45Image1{ */
+/* 	position: relative; */
+/* 	width: 20px; */
+/* 	height: 50px; */
+/* 	background-color: black; */
+/* 	left: 46%; */
+/* 	top: 170px; */
+/* 	color: white; */
+/* 	text-align: center; */
+/* 	display: none; */
+
+/* } */
+
+/* .plate45Image2{ */
+/* 	position: relative; */
+/* 	width: 20px; */
+/* 	height: 50px; */
+/* 	background-color: black; */
+/* 	left: 71%; */
+/* 	top: 125px; */
+/* 	color: white; */
+/* 	text-align: center; */
+/* 	display: none; */
+
+/* } */
+.plateLabel{
+	
+}
+}
