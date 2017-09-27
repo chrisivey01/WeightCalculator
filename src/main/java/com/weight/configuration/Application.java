@@ -5,9 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 
 @SpringBootApplication
+@EnableMongoRepositories(basePackages = {"com.weight.repository"})
 @ComponentScan(basePackages = { "com.weight"})
 public class Application {
     private static Logger logger = LoggerFactory.getLogger(Application.class);

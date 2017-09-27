@@ -38,24 +38,45 @@ public class WeightLiftingController {
         return putOnBarbell;
     }
 
+//    @PostMapping("article")
+//    public ResponseEntity<Void> createArticle(@RequestBody Article article, UriComponentsBuilder builder) {
+//        boolean flag = articleService.createArticle(article);
+//        if (flag == false) {
+//            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+//        }
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setLocation(builder.path("/article?id={id}").buildAndExpand(article.getArticleId()).toUri());
+//        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+//    }
+
     @CrossOrigin(origins = "*")
-    @RequestMapping(value="/weightCalc", method = RequestMethod.POST)
-    public String weightCalc(@RequestParam double weight) {
+    @PostMapping(value="/test")
+    public String test(@RequestBody String test){
+        System.out.println(test);
+        return "Test Returned";
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(value="/weightCalc")
+    public String weightCalc(@RequestParam String weightString) {
+        logger.info("in weightCalc");
+        logger.info("Weight: " + weightString);
         double[] plateWeightList = {45, 25, 10, 5, 2.5};
         double barWeight = 45;
+        double weight = Double.valueOf(weightString);
 
         if (weight % plateWeightList[plateWeightList.length - 1] != 0) {
-            return "Not possible";
+            return "Invalid";
         } else {
-            List<Double> weightOnBarbell = new ArrayList<>();
+            List<String> weightOnBarbell = new ArrayList<>();
 
             double remainingWeight = weight - barWeight;
 
             while (remainingWeight >= plateWeightList[plateWeightList.length - 1] * 2) {
                 for (double plateWeight : plateWeightList) {
                     if (remainingWeight >= plateWeight * 2) {
-                        weightOnBarbell.add(plateWeight);
-                        weightOnBarbell.add(plateWeight);
+                        weightOnBarbell.add(Double.toString(plateWeight));
+                        weightOnBarbell.add(Double.toString(plateWeight));
                         remainingWeight -= plateWeight * 2;
                         logger.info("Added 2 {} pound plates", plateWeight);
                         break;
